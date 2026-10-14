@@ -350,7 +350,7 @@ jobs:
         SYSROOT=/usr/${{ matrix.platform.arch }}/sys-root
         [ -d "$SYSROOT" ] || SYSROOT=/usr/${{ matrix.platform.arch }}
         echo "CROSS_SYSROOT=$SYSROOT" >> $GITHUB_ENV
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
     - name: checkout fuzz/corpora submodule

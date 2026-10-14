@@ -63,7 +63,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install ${{ matrix.gcc }}
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         ref: ${{ github.event.inputs.head_sha || github.sha }}
@@ -105,7 +105,7 @@ jobs:
       IMAGE: ghcr.io/openssl/openssl-vs2013:latest
       VCVARS: C:\vc12\vcvars_${{ matrix.arch }}.cmd
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         ref: ${{ github.event.inputs.head_sha || github.sha }}
@@ -164,7 +164,7 @@ jobs:
         echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-$VERSION main" | sudo tee -a /etc/apt/sources.list
         sudo apt-get update || true
         sudo apt-get -y install ${{ matrix.clang }}
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         ref: ${{ github.event.inputs.head_sha || github.sha }}
